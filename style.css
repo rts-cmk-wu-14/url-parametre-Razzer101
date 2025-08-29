@@ -1,0 +1,28 @@
+body{
+}
+
+#mainWrapper{
+    width: 80%;
+    margin: 2em auto;
+}
+
+#mainWrapper section{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1em;
+}
+
+#mainWrapper figure{
+    background-color: #b2ffff;
+    margin: 0;
+}
+
+#mainWrapper img{
+    width: 100%;
+    aspect-ratio: 1/1.05;
+    object-fit: cover;
+}
+
+#mainWrapper figcaption{
+    padding: 1em;
+}
