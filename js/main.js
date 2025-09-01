@@ -1,7 +1,6 @@
-const dataLink = "http://127.0.0.1:5500/data/destinations.json"
 const mainWrapper = document.querySelector("#mainWrapper")
 
-fetch(dataLink).then((result) => result.json()).then((data) => {handleData(data)})
+fetch("../data/destinations.json").then((result) => result.json()).then((data) => {handleData(data)})
 
 function handleData(data) {
     const mainContent = /*html*/ `
@@ -13,7 +12,7 @@ function handleData(data) {
                 <img src="/img/${elm.image}" alt="#">
                 <figcaption>
                     <button></button>
-                    <a href="#"></a>
+                    <a href="/destinations.html?id=${elm.id}">MORE</a>
                 </figcaption>
             </figure>
             `
