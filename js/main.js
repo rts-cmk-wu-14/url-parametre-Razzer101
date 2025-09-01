@@ -11,7 +11,7 @@ function handleData(data) {
             <figure>
                 <img src="/img/${elm.image}" alt="#">
                 <figcaption>
-                    <button class="heartBtn"><i class="fa fa-heart"></i></button>
+                    <button id="btn${elm.id}" class="heartBtn" data-id=${elm.id}><i class="fa fa-heart"></i></button>
                     <a href="/destinations.html?id=${elm.id}">MORE</a>
                 </figcaption>
             </figure>
@@ -28,7 +28,19 @@ function handleData(data) {
     })
 
     function handleHeartBtn(event){
-        // event.currentTarget.style.color === "red" ? event.currentTarget.style.color = "black" : event.currentTarget.style.color = "red"
-        event.currentTarget.classList.toggle("favorite")
+        let btnId = event.currentTarget.dataset.id
+        if(localStorage.getItem(`btn${btnId}`)){
+            localStorage.removeItem(`btn${btnId}`)
+            event.currentTarget.classList.remove("favorite")
+        }
+        else{
+            localStorage.setItem(`btn${btnId}`, btnId)
+            event.currentTarget.classList.add("favorite")
+        }
+    }
+
+    let dataId = data.destinations
+    if(localStorage.key(`btn${dataId[0].id}`)){
+        document.querySelector(`#btn${dataId[0].id}`).classList.add("favorite")
     }
 }
