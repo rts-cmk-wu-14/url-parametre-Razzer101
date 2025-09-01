@@ -7,8 +7,8 @@ fetch(`../data/${id}.json`).then((respons) => respons.json()).then((data)=>{show
 function showData(data){
     const destinationsContent = /*html*/`
         <figure>
-            <button></button>
-            <img src="" alt="">
+            <button><i class="fa fa-heart"></i><p>Favorit</p></button>
+            <img src="/img/${data.image}" alt="">
         </figure>
         <article>
             <h2>${data.destination}</h2>

@@ -1,25 +1,168 @@
-#mainWrapper{
-    width: 80%;
-    margin: 2em auto;
-}
-
-#mainWrapper section{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 1em;
-}
-
-#mainWrapper figure{
-    background-color: #b2ffff;
+body{
     margin: 0;
 }
 
-#mainWrapper img{
+/* #region Main */
+#mainWrapper {
+  width: 80%;
+  margin: 2em auto;
+}
+
+#mainWrapper h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+#mainWrapper section {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1em;
+}
+
+#mainWrapper figure {
+  background-color: #b2ffff;
+  margin: 0;
+}
+
+#mainWrapper img {
+  width: 100%;
+  aspect-ratio: 1/1.05;
+  object-fit: cover;
+}
+
+#mainWrapper figcaption {
+  padding: 1.1em 1.4em;
+  display: flex;
+  justify-content: space-between;
+}
+
+#mainWrapper a {
+  text-decoration: none;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8em;
+  cursor: pointer;
+  padding: 5px;
+}
+
+#mainWrapper a:hover {
+  background-color: #0000001b;
+  border-radius: 5px;
+}
+
+.heartBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 5px;
+  color: black;
+}
+
+.favorite {
+  color: red;
+}
+/* #endregion */
+
+#destionationsWrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 1em 1em 0 1em;
+}
+
+#destionationsWrapper figure{
+    margin: 0;
+    display: grid;
+}
+
+#destionationsWrapper img{
     width: 100%;
-    aspect-ratio: 1/1.05;
+    height: 100%;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
     object-fit: cover;
 }
 
-#mainWrapper figcaption{
-    padding: 1em;
+#destionationsWrapper button{
+    height: 10%;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    z-index: 2;
+    margin: .5em 1em 0 auto;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+}
+
+#destionationsWrapper button p{
+    margin: auto 0;
+}
+
+#destionationsWrapper button i{
+    padding-right: 5px;
+    margin: auto 0;
+    font-size: 1.5em;
+}
+
+#destionationsWrapper article{
+    padding: 0 4em;
+    margin: 5em 0;
+}
+
+#destionationsWrapper article h2{
+    margin-top: 0;
+    margin-bottom: .5em;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    font-size: 1.4em;
+}
+
+#destionationsWrapper article h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 1.2em;
+}
+
+#destionationsWrapper article h3{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 2em;
+}
+
+#destionationsWrapper article h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+#destionationsWrapper article p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 2em;
+}
+
+#destionationsWrapper article ul{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8em;
+    margin: 0;
+    padding-left: 1.3em;
+}
+
+#destionationsWrapper article ul li{
+    padding: .3em 0;
 }

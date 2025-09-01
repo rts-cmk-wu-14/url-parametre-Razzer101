@@ -11,7 +11,7 @@ function handleData(data) {
             <figure>
                 <img src="/img/${elm.image}" alt="#">
                 <figcaption>
-                    <button></button>
+                    <button class="heartBtn"><i class="fa fa-heart"></i></button>
                     <a href="/destinations.html?id=${elm.id}">MORE</a>
                 </figcaption>
             </figure>
@@ -21,4 +21,14 @@ function handleData(data) {
     `
 
     mainWrapper.insertAdjacentHTML("afterbegin", mainContent)
+
+    const heartBtn = document.querySelectorAll(".heartBtn")
+    heartBtn.forEach((btn) => {
+    btn.addEventListener("click", handleHeartBtn)
+    })
+
+    function handleHeartBtn(event){
+        // event.currentTarget.style.color === "red" ? event.currentTarget.style.color = "black" : event.currentTarget.style.color = "red"
+        event.currentTarget.classList.toggle("favorite")
+    }
 }
