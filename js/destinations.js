@@ -35,24 +35,24 @@ function showData(data){
         if(localStorage.getItem(`btn${data.id}`)){
             localStorage.removeItem(`btn${data.id}`)
             favoriteBtn.classList.remove("favorite")
-            favoriteBtn.style.color = "white"
+            favoriteBtn.classList.add("notFavorite")
         }
 
         else{
             localStorage.setItem(`btn${data.id}`, data.id)
             favoriteBtn.classList.add("favorite")
-            favoriteBtn.style.color = ""
+            favoriteBtn.classList.remove("notFavorite")
         }
         
     }
 
     if(localStorage.getItem(`btn${data.id}`)){
             favoriteBtn.classList.add("favorite")
-            favoriteBtn.style.color = ""
+            favoriteBtn.classList.remove("notFavorite")
     }
 
     else{
         favoriteBtn.classList.remove("favorite")
-        favoriteBtn.style.color = "white"
+        favoriteBtn.classList.add("notFavorite")
     }
 }

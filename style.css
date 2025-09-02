@@ -176,6 +176,10 @@ body {
   color: red;
 }
 
+.notFavorite{
+  color: white;
+}
+
 @media screen and (max-width: 769px) {
   #mainWrapper section {
     grid-template-columns: auto auto;
