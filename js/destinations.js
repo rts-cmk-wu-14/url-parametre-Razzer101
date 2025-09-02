@@ -1,3 +1,5 @@
+import { handleHeartBtn } from "./handleHeartBtn.js"
+
 let params = new URLSearchParams(window.location.search)
 const id = params.get("id")
 const destionationsWrapper = document.querySelector("#destionationsWrapper")
@@ -7,7 +9,7 @@ fetch(`../data/${id}.json`).then((respons) => respons.json()).then((data)=>{show
 function showData(data){
     const destinationsContent = /*html*/`
         <figure>
-            <button id="favorite${data.id}"><i class="fa fa-heart"></i><p>Favorite</p></button>
+            <button id="favorite${data.id}" data-id=${data.id} class="favoriteBtn"><i class="fa fa-heart"></i><p>Favorite</p></button>
             <img src="/img/${data.image}" alt="">
         </figure>
         <article>
@@ -24,35 +26,10 @@ function showData(data){
             <a href="/index.html">Tilbage</a>
         </article>
     `
-
     destionationsWrapper.insertAdjacentHTML("afterbegin", destinationsContent)
 
     const favoriteBtn = document.querySelector(`#favorite${data.id}`)
+    favoriteBtn.addEventListener("click", handleHeartBtn)
 
-    favoriteBtn.addEventListener("click", handleFavoriteClick)
-
-    function handleFavoriteClick(){
-        if(localStorage.getItem(`btn${data.id}`)){
-            localStorage.removeItem(`btn${data.id}`)
-            favoriteBtn.classList.remove("favorite")
-            favoriteBtn.classList.add("notFavorite")
-        }
-
-        else{
-            localStorage.setItem(`btn${data.id}`, data.id)
-            favoriteBtn.classList.add("favorite")
-            favoriteBtn.classList.remove("notFavorite")
-        }
-        
-    }
-
-    if(localStorage.getItem(`btn${data.id}`)){
-            favoriteBtn.classList.add("favorite")
-            favoriteBtn.classList.remove("notFavorite")
-    }
-
-    else{
-        favoriteBtn.classList.remove("favorite")
-        favoriteBtn.classList.add("notFavorite")
-    }
+    localStorage.getItem(`btn${data.id}`) ? favoriteBtn.classList.add("favorite") : favoriteBtn.classList.remove("favorite")
 }

@@ -81,7 +81,7 @@ body {
   object-fit: cover;
 }
 
-#destionationsWrapper button {
+.favoriteBtn {
   height: 10%;
   grid-column: 1 / 1;
   grid-row: 1 / 1;
@@ -94,6 +94,7 @@ body {
   text-align: center;
   display: flex;
   cursor: pointer;
+  color: white;
 }
 
 #destionationsWrapper button p {
@@ -174,10 +175,6 @@ body {
 
 .favorite {
   color: red;
-}
-
-.notFavorite{
-  color: white;
 }
 
 @media screen and (max-width: 769px) {

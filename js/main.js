@@ -1,3 +1,5 @@
+import { handleHeartBtn } from "./handleHeartBtn.js";
+
 const mainWrapper = document.querySelector("#mainWrapper")
 
 fetch("../data/destinations.json").then((result) => result.json()).then((data) => {handleData(data)})
@@ -19,7 +21,6 @@ function handleData(data) {
         }).join("")}
     </section>
     `
-
     mainWrapper.insertAdjacentHTML("afterbegin", mainContent)
 
     const heartBtn = document.querySelectorAll(".heartBtn")
@@ -27,22 +28,8 @@ function handleData(data) {
     btn.addEventListener("click", handleHeartBtn)
     })
 
-    function handleHeartBtn(event){
-        let btnId = event.currentTarget.dataset.id
-        if(localStorage.getItem(`btn${btnId}`)){
-            localStorage.removeItem(`btn${btnId}`)
-            event.currentTarget.classList.remove("favorite")
-        }
-        else{
-            localStorage.setItem(`btn${btnId}`, btnId)
-            event.currentTarget.classList.add("favorite")
-        }
-        // event.currentTarget.classList.toggle("favorite")
-    }
-
     data.destinations.forEach((dataId) => {
-        if(localStorage.getItem(`btn${dataId.id}`)){
-            document.querySelector(`#btn${dataId.id}`).classList.add("favorite")
-        }
+        let heartBtn = document.querySelector(`#btn${dataId.id}`)
+        localStorage.getItem(`btn${dataId.id}`) ? heartBtn.classList.add("favorite") : heartBtn.classList.remove("favorite")
     })
 }
