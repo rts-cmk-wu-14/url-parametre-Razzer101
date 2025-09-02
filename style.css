@@ -1,5 +1,5 @@
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
 /* #region Main */
@@ -61,115 +61,123 @@ body{
 }
 /* #endregion */
 
-#destionationsWrapper{
-    display: grid;
-    grid-template-columns: auto auto;
-    margin: 1em 1em 0 1em;
+/* #region Destinations */
+#destionationsWrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 1em 1em 0 1em;
 }
 
-#destionationsWrapper figure{
-    margin: 0;
-    display: grid;
+#destionationsWrapper figure {
+  margin: 0;
+  display: grid;
 }
 
-#destionationsWrapper img{
-    width: 100%;
-    height: 100%;
-    grid-column: 1 / 1;
-    grid-row: 1 / 1;
-    object-fit: cover;
+#destionationsWrapper img {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  object-fit: cover;
 }
 
-#destionationsWrapper button{
-    height: 10%;
-    grid-column: 1 / 1;
-    grid-row: 1 / 1;
-    z-index: 2;
-    margin: .5em 1em 0 auto;
-    padding: 10px;
-    background-color: transparent;
-    border: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    display: flex;
-    cursor: pointer;
+#destionationsWrapper button {
+  height: 10%;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  z-index: 2;
+  margin: 0.5em 1em 0 auto;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  display: flex;
+  cursor: pointer;
 }
 
-#destionationsWrapper button p{
-    margin: auto 0;
+#destionationsWrapper button p {
+  margin: auto 0;
 }
 
-#destionationsWrapper button i{
-    padding-right: 5px;
-    margin: auto 0;
-    font-size: 1.5em;
+#destionationsWrapper button i {
+  padding-right: 5px;
+  margin: auto 0;
+  font-size: 1.5em;
 }
 
-#destionationsWrapper article{
-    padding: 0 4em;
-    margin: 5em 0;
+#destionationsWrapper article {
+  padding: 0 4em;
+  margin: 5em 0;
 }
 
-#destionationsWrapper article h2{
-    margin-top: 0;
-    margin-bottom: .5em;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: normal;
-    font-size: 1.4em;
+#destionationsWrapper article h2 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  font-size: 1.4em;
 }
 
-#destionationsWrapper article h1{
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: normal;
-    font-size: 1.6em;
-    margin-top: 0;
-    margin-bottom: 1.2em;
+#destionationsWrapper article h1 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  font-size: 1.6em;
+  margin-top: 0;
+  margin-bottom: 1.2em;
 }
 
-#destionationsWrapper article h3{
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: normal;
-    font-size: 1em;
-    margin-top: 0;
-    margin-bottom: 2em;
+#destionationsWrapper article h3 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 2em;
 }
 
-#destionationsWrapper article h4{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1em;
-    margin-top: 0;
-    margin-bottom: .5em;
+#destionationsWrapper article h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }
 
-#destionationsWrapper article p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1em;
-    margin-top: 0;
-    margin-bottom: 2em;
+#destionationsWrapper article p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 2em;
 }
 
-#destionationsWrapper article ul{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: .8em;
-    margin: 0;
-    margin-bottom: 2em;
-    padding-left: 1.3em;
+#destionationsWrapper article ul {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8em;
+  margin: 0;
+  margin-bottom: 2em;
+  padding-left: 1.3em;
 }
 
-#destionationsWrapper article ul li{
-    padding: .3em 0;
+#destionationsWrapper article ul li {
+  padding: 0.3em 0;
 }
 
-#destionationsWrapper article a{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1em;
-    color: black;
-    cursor: pointer;
+#destionationsWrapper article a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  color: black;
+  cursor: pointer;
 }
+/* #endregion */
 
 .favorite {
   color: red;
+}
+
+@media screen and (max-width: 769px) {
+  #mainWrapper section {
+    grid-template-columns: auto auto;
+  }
 }
