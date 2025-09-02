@@ -7,7 +7,7 @@ fetch(`../data/${id}.json`).then((respons) => respons.json()).then((data)=>{show
 function showData(data){
     const destinationsContent = /*html*/`
         <figure>
-            <button><i class="fa fa-heart"></i><p>Favorit</p></button>
+            <button id="favorite${data.id}"><i class="fa fa-heart"></i><p>Favorite</p></button>
             <img src="/img/${data.image}" alt="">
         </figure>
         <article>
@@ -21,8 +21,38 @@ function showData(data){
                 return /*html*/ `<li>${elm}</li>`
                 }).join("")}
             </ul>
+            <a href="/index.html">Tilbage</a>
         </article>
     `
 
     destionationsWrapper.insertAdjacentHTML("afterbegin", destinationsContent)
+
+    const favoriteBtn = document.querySelector(`#favorite${data.id}`)
+
+    favoriteBtn.addEventListener("click", handleFavoriteClick)
+
+    function handleFavoriteClick(){
+        if(localStorage.getItem(`btn${data.id}`)){
+            localStorage.removeItem(`btn${data.id}`)
+            favoriteBtn.classList.remove("favorite")
+            favoriteBtn.style.color = "white"
+        }
+
+        else{
+            localStorage.setItem(`btn${data.id}`, data.id)
+            favoriteBtn.classList.add("favorite")
+            favoriteBtn.style.color = ""
+        }
+        
+    }
+
+    if(localStorage.getItem(`btn${data.id}`)){
+            favoriteBtn.classList.add("favorite")
+            favoriteBtn.style.color = ""
+    }
+
+    else{
+        favoriteBtn.classList.remove("favorite")
+        favoriteBtn.style.color = "white"
+    }
 }

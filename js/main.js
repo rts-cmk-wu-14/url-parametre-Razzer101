@@ -37,10 +37,12 @@ function handleData(data) {
             localStorage.setItem(`btn${btnId}`, btnId)
             event.currentTarget.classList.add("favorite")
         }
+        // event.currentTarget.classList.toggle("favorite")
     }
 
-    let dataId = data.destinations
-    if(localStorage.key(`btn${dataId[0].id}`)){
-        document.querySelector(`#btn${dataId[0].id}`).classList.add("favorite")
-    }
+    data.destinations.forEach((dataId) => {
+        if(localStorage.getItem(`btn${dataId.id}`)){
+            document.querySelector(`#btn${dataId.id}`).classList.add("favorite")
+        }
+    })
 }
